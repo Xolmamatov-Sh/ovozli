@@ -254,6 +254,6 @@ if __name__ == '__main__':
     print(f"     - Ayol: {VOICE_OPTIONS['female']}")
     print("="*60 + "\n")
     
-    if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+    if __name__ == "__main__":
+        port = int(os.environ.get("PORT", 10000))
+        app.run(host="0.0.0.0", port=port)
