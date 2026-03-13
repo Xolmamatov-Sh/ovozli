@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header i {
+    margin-right: 10px;
+}
+
+.assistant-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.status-indicator {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.status-indicator.active {
+    background: #4CAF50;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.status-indicator.listening {
+    background: #ff4444;
+    color: white;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255,68,68,0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(255,68,68,0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255,68,68,0);
+    }
+}
+
+.wave-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wave-animation.active {
+    opacity: 1;
+}
+
+.wave-animation span {
+    display: inline-block;
+    width: 5px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0 3px;
+    border-radius: 5px;
+    animation: wave 1s ease-in-out infinite;
+}
+
+.wave-animation span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.wave-animation span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.wave-animation span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.wave-animation span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: scaleY(0.5);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+}
+
+.command-display, .response-display {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    min-height: 60px;
+    border-left: 4px solid #667eea;
+}
+
+.response-display {
+    border-left-color: #4CAF50;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.record-btn {
+    flex: 2;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.record-btn:hover {
+    transform: translateY(-2px);
+}
+
+.record-btn.recording {
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    animation: recording 1.5s infinite;
+}
+
+@keyframes recording {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.action-select {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+.quick-commands {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.quick-commands h3 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.command-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cmd-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cmd-btn:hover {
+    background: #f0f0f0;
+    border-color: #667eea;
+}
+
+.cmd-btn i {
+    margin-right: 5px;
+    color: #667eea;
+}
+
+.music-player {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.music-player h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.music-player audio {
+    width: 100%;
+}
+
+.history-section {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.history-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.history-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.history-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-list li i {
+    color: #667eea;
+}
+
+.history-list li:last-child {
+    border-bottom: none;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+    
+    .command-buttons {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+/* Ovoz tanlash selecti uchun stillar */
+.voice-selector {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.voice-select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.voice-select:hover {
+    background: #f0f0f0;
+    border-color: #764ba2;
+}
+
+.voice-select option {
+    padding: 10px;
+}
+.command-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.cmd-btn {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cmd-btn:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.cmd-btn i {
+    margin-right: 5px;
+    color: #667eea;
+}
+
+.cmd-btn:hover i {
+    color: white;
+}
