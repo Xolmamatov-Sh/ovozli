@@ -62,15 +62,14 @@ def convert_webm_to_wav(input_path, output_path):
         logger.error(f"Konvertatsiya xatosi: {e}")
         return False
 
-@app.route('/api/test', methods=['GET'])
+@app.route("/api/test", methods=["GET"])
 def test():
     return jsonify({
-        'status': 'running',
-        'message': 'Backend server ishlayapti',
-        'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'ffmpeg_installed': check_ffmpeg(),
-        'current_voice': CURRENT_VOICE,
-        'voice_options': VOICE_OPTIONS
+        "server": "running",
+        "status": "ok",
+        "current_voice": current_voice,
+        "ffmpeg_installed": True,
+        "message": "Backend server ishlayapti"
     })
 
 @app.route('/api/health', methods=['GET'])
