@@ -7,7 +7,6 @@ import logging
 from datetime import datetime
 import subprocess
 import wave
-import audioop
 import io
 
 app = Flask(__name__)
