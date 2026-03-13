@@ -3,10 +3,10 @@ class VoiceAssistant {
         this.mediaRecorder = null;
         this.audioChunks = [];
         this.isRecording = false;
-        this.apiUrl = 'http://127.0.0.1:5000/api/stt';
-        this.ttsUrl = 'http://127.0.0.1:5000/api/tts';
-        this.testUrl = 'http://127.0.0.1:5000/api/test';
-        this.voiceSetUrl = 'http://127.0.0.1:5000/api/voice/set';
+        this.apiUrl = 'https://ovozli.onrender.com/api/stt';
+        this.ttsUrl = 'https://ovozli.onrender.com/api/tts';
+        this.testUrl = 'https://ovozli.onrender.com/api/test';
+        this.voiceSetUrl = 'https://ovozli.onrender.com/api/voice/set';
         
         // Ovoz sozlamalari
         this.currentVoice = 'male';
